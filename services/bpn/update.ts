@@ -1,5 +1,5 @@
-import handler from "../libs/handler-lib";
-import dynamoDb from "../libs/dynamodb-lib";
+import handler from "./libs/handler-lib";
+import dynamoDb from "./libs/dynamodb-lib";
 import { APIGatewayEvent, Context } from "aws-lambda";
 import { UpdateBPN } from "types";
 import { DocumentClient } from "aws-sdk/clients/dynamodb";

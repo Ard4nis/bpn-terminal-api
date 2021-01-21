@@ -1,6 +1,6 @@
+import handler from "./libs/handler-lib";
 import * as uuid from "uuid";
-import handler from "../libs/handler-lib";
-import dynamoDb from "../libs/dynamodb-lib";
+import dynamoDb from "./libs/dynamodb-lib";
 import { CreateBPN } from "types";
 import { APIGatewayEvent, Context } from "aws-lambda";
 
