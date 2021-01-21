@@ -1,4 +1,4 @@
-import handler from "./libs/handler-lib";
+import handler from "../../libs/handler-lib";
 import * as uuid from "uuid";
 import dynamoDb from "./libs/dynamodb-lib";
 import { CreateBPN } from "types";

@@ -19,6 +19,7 @@ provider:
   # under process.env.
   environment:
     tableName: bpn
+    stripeSecretKey: ${env:STRIPE_SECRET_KEY}
 
 
   # 'iamRoleStatements' defines the permission policy for the Lambda function.
@@ -74,4 +75,12 @@ functions:
       - http:
           path: bpn/{id}
           method: delete
+          authorizer: aws_iam
+
+  support:
+    handler: services/support/support.main
+    events:
+      - http:
+          path: support
+          method: post
           authorizer: aws_iam
