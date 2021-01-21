@@ -63,3 +63,10 @@ functions:
       - http:
           path: bpn/{id}
           method: put
+  
+  delete:
+    handler: bpn/delete.main
+    events:
+      - http:
+          path: bpn/{id}
+          method: delete
