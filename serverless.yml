@@ -37,35 +37,35 @@ provider:
 
 functions:
   create:
-    handler: bpn/create.main
+    handler: services/bpn/create.main
     events:
       - http:
           path: bpn/create
           method: post
   
   get:
-    handler: bpn/get.main
+    handler: services/bpn/get.main
     events:
       - http:
           path: bpn/{id}
           method: get
   
   list:
-    handler: bpn/list.main
+    handler: services/bpn/list.main
     events:
       - http:
           path: bpn
           method: get
   
   update:
-    handler: bpn/update.main
+    handler: services/bpn/update.main
     events:
       - http:
           path: bpn/{id}
           method: put
   
   delete:
-    handler: bpn/delete.main
+    handler: services/bpn/delete.main
     events:
       - http:
           path: bpn/{id}
