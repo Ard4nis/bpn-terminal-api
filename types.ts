@@ -18,7 +18,7 @@ export interface BPN {
 	attachment: string;
 }
 
-export type CreateBPN = Omit<BPN, "id">;
+export type CreateBPN = Omit<BPN, "id" | "gameMaster">;
 export type UpdateBPN = Partial<BPN>;
 
 export enum ColourCodeEnum {

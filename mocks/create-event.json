@@ -1,3 +1,8 @@
 {
-    "body": "{\"gameMaster\":\"123\",\"colourCode\":\"BLUE\",\"department\":\"testDepartment\",\"trainingPackage\":\"testPackage\",\"details\":\"This is a test BPN\",\"scl\":10,\"sclIncrease\":0.1,\"coverage\":\"NONE\",\"reward\":800,\"rewardType\":\"PER_SQUAD\",\"attachment\":\"test.jpg\"}"
+    "body": "{\"gameMaster\":\"123\",\"colourCode\":\"BLUE\",\"department\":\"testDepartment\",\"trainingPackage\":\"testPackage\",\"details\":\"This is a test BPN\",\"scl\":10,\"sclIncrease\":0.1,\"coverage\":\"NONE\",\"reward\":800,\"rewardType\":\"PER_SQUAD\",\"attachment\":\"test.jpg\"}",
+    "requestContext": {
+        "identity": {
+          "cognitoIdentityId": "USER-SUB-1234"
+        }
+      }
 }

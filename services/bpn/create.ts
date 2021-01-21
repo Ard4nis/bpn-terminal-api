@@ -11,7 +11,7 @@ export const main = handler(
 		const params = {
 			TableName: process.env.tableName,
 			Item: {
-				userId: data.gameMaster,
+				userId: event.requestContext.identity.cognitoIdentityId,
 				bpnId: uuid.v4(),
 				colourCode: data.colourCode,
 				department: data.department,
