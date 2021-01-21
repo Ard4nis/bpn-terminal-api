@@ -15,12 +15,16 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.64",
     "@types/jest": "^26.0.14",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
     "aws-sdk": "^2.829.0",
     "serverless-bundle": "^3.2.1",
     "serverless-dotenv-plugin": "^3.0.0",
     "serverless-offline": "^6.8.0"
   },
   "dependencies": {
+    "eslint": "^7.18.0",
     "serverless": "^2.19.0",
     "uuid": "^7.0.3"
   }

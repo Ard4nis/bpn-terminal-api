@@ -1,4 +1,3 @@
-# NOTE: update this with your service name
 service: bpn-terminal-api
 
 # Create an optimized package for our functions 
@@ -16,10 +15,51 @@ provider:
   stage: prod
   region: eu-west-1
 
+  # These environment variables are made available to our functions
+  # under process.env.
+  environment:
+    tableName: bpn
+
+
+  # 'iamRoleStatements' defines the permission policy for the Lambda function.
+  # In this case Lambda functions are granted with permissions to access DynamoDB.
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Scan
+        - dynamodb:Query
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+        - dynamodb:DescribeTable
+      Resource: "arn:aws:dynamodb:eu-west-1:*:*"
+
 functions:
-  hello:
-    handler: handler.hello
+  create:
+    handler: bpn/create.main
     events:
       - http:
-          path: hello
+          path: bpn/create
+          method: post
+  
+  get:
+    handler: bpn/get.main
+    events:
+      - http:
+          path: bpn/{id}
           method: get
+  
+  list:
+    handler: bpn/list.main
+    events:
+      - http:
+          path: bpn
+          method: get
+  
+  update:
+    handler: bpn/update.main
+    events:
+      - http:
+          path: bpn/{id}
+          method: put
