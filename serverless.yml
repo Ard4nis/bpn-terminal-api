@@ -43,6 +43,7 @@ functions:
       - http:
           path: bpn/create
           method: post
+          cors: true
           authorizer: aws_iam
   
   get:
@@ -51,6 +52,7 @@ functions:
       - http:
           path: bpn/{id}
           method: get
+          cors: true
           authorizer: aws_iam
   
   list:
@@ -59,6 +61,7 @@ functions:
       - http:
           path: bpn
           method: get
+          cors: true
           authorizer: aws_iam
   
   update:
@@ -67,6 +70,7 @@ functions:
       - http:
           path: bpn/{id}
           method: put
+          cors: true
           authorizer: aws_iam
   
   delete:
@@ -75,6 +79,7 @@ functions:
       - http:
           path: bpn/{id}
           method: delete
+          cors: true
           authorizer: aws_iam
 
   support:
@@ -83,4 +88,10 @@ functions:
       - http:
           path: support
           method: post
+          cors: true
           authorizer: aws_iam
+
+# Create our resources with separate CloudFormation templates
+resources:
+  # API Gateway Errors
+  - ${file(resources/api-gateway-errors.yml)}
